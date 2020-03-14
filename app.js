@@ -9,12 +9,15 @@ function main(req,res) {
         res.end();
     });
 
-    fs.appendFile('mujnovysoubor.txt', 'Ahoj světe!', function(err){
-        if (err) throw err;
-        console.log('Uloženo!');
-    });
-
 }
+
+fs.open('mujnovysoubor2.txt', 'w', function(err, file){
+    if (err){
+        return console.error(err);
+    }
+    console.log(file);
+    console.log("Hotovo");
+});
 
 let srv = http.createServer(main);
 srv.listen(PORT);
