@@ -8,16 +8,16 @@ function main(req,res) {
         res.write(data);
         res.end();
     });
-
 }
 
-fs.open('mujzcelanovysoubor2.txt', 'w', function(err, file){
+
+fs.unlink('mujzcelanovysoubor2.txt', function (err) {
     if (err){
         return console.error(err);
     }
-    console.log(file);
-    console.log("Hotovo");
+    console.log("Vymazáno!");
 });
+
 
 let srv = http.createServer(main);
 srv.listen(PORT);
