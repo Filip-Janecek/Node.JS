@@ -11,7 +11,7 @@ function main(req,res) {
 
 }
 
-fs.open('mujnovysoubor2.txt', 'w', function(err, file){
+fs.open('mujzcelanovysoubor2.txt', 'w', function(err, file){
     if (err){
         return console.error(err);
     }
