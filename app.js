@@ -9,9 +9,14 @@ function main(req,res) {
         res.end();
     });
 
+    fs.appendFile('mujnovysoubor.txt', 'Ahoj světe!', function(err){
+        if (err) throw err;
+        console.log('Uloženo!');
+    });
+
 }
 
 let srv = http.createServer(main);
 srv.listen(PORT);
 
-console.log("Server běží na adrese http://localhost:" + PORT);c
+console.log("Server běží na adrese http://localhost:" + PORT);
